@@ -3,7 +3,8 @@ export function get_Search_Results(textSearch, query, inputShortcut, selectedPro
             method: "POST",
             cache: "no-cache",
             headers: {
-                "content_type": "application/json",
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({
                 textSearch: textSearch,
