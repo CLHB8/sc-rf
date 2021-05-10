@@ -34,19 +34,15 @@ def shortcut_search_query(user_input_query, user_input_program, user_input_devic
 @app.route('/api/getSearchResults', methods=['POST'])
 def get_search_results():
     # get user inputs
-    print(request.data)
-    print("______")
     data_json = request.get_json(force=True)
-    print(data_json)
-    print("______")
-    print("{} is {}".format(data_json, type(data_json)))
-    user_input_text_search = request.json['textSearch']
-    user_input_shortcut_query = request.json['inputShortcut']
-    user_input_query = request.json['query']
-    user_input_program = request.json['selectedProgram'].replace(' ', '_').lower()
+
+    user_input_text_search = data_json['textSearch']
+    user_input_shortcut_query = data_json['inputShortcut']
+    user_input_query = data_json['query']
+    user_input_program = data_json['selectedProgram'].replace(' ', '_').lower()
     if user_input_program == 'null':
         user_input_program = 'all'
-    user_input_device = get_device(int(request.json['tabsValue']))
+    user_input_device = get_device(int(data_json['tabsValue']))
 
     if user_input_text_search:
         ids, corrected_query, misspell_boolean = text_search_query(user_input_query,
