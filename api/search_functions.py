@@ -75,7 +75,7 @@ def text_query(user_input_query, user_input_program, user_input_device):
         query_prep = [word2vec_model.wv[vec] for vec in user_input_bi_tri_grams_synonyms]
         query_prep = np.mean(query_prep, axis=0)
 
-        if user_input_program == 'all':
+        if user_input_program == 'all' or user_input_query == '':
             item_output_threshold = 100
             filter_threshold = 0.25
         else:
@@ -113,7 +113,7 @@ def shortcut_query(user_input_query, user_input_program, user_input_device, inde
         query_prep = [word2vec_model.wv[vec] for vec in user_input_terms]
         query_prep = np.mean(query_prep, axis=0)
 
-        if user_input_program == 'all':
+        if user_input_program == 'all' or user_input_query == '':
             item_output_threshold = 100
             filter_threshold = 0.15
         else:

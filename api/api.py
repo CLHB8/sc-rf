@@ -40,7 +40,7 @@ def get_search_results():
     user_input_shortcut_query = data_json['inputShortcut']
     user_input_query = data_json['query']
     user_input_program = data_json['selectedProgram'].replace(' ', '_').lower()
-    if user_input_program == 'null':
+    if user_input_program == 'null' or user_input_program == '':
         user_input_program = 'all'
     user_input_device = get_device(int(data_json['tabsValue']))
 
