@@ -39,8 +39,8 @@ def clean_tokenized_sentence(tokens: List[str],
 
 
 def get_text_search_terms(keywords, synonyms_threshold, fasttext_model):
-    bi_gram_model = Phraser.load('../src/models/bi_gram_model.pkl')
-    tri_gram_model = Phraser.load('../src/models/tri_gram_model.pkl')
+    bi_gram_model = Phraser.load('src/models/bi_gram_model.pkl')
+    tri_gram_model = Phraser.load('src/models/tri_gram_model.pkl')
 
     # clean tokens
     cleaned_terms = clean_tokenized_sentence(keywords.split(' ')).split()
@@ -65,8 +65,8 @@ def get_text_search_terms(keywords, synonyms_threshold, fasttext_model):
 def text_query(user_input_query, user_input_program, user_input_device):
     try:
         index = nmslib.init(method='hnsw', space='cosinesimil')
-        index.loadIndex('../src/models/sparse_index_word2vec_text_search.bin', load_data=True)
-        word2vec_model = Word2Vec.load('../src/models/_word2vec_text_search.model')
+        index.loadIndex('src/models/sparse_index_word2vec_text_search.bin', load_data=True)
+        word2vec_model = Word2Vec.load('src/models/_word2vec_text_search.model')
         user_input_bi_tri_grams_synonyms = \
             get_text_search_terms(str(user_input_query), 0.9, word2vec_model)
         user_input_bi_tri_grams_synonyms.append(user_input_program)
@@ -104,7 +104,7 @@ def get_shortcut_search_terms(keywords):
 
 def shortcut_query(user_input_query, user_input_program, user_input_device, index):
     try:
-        word2vec_model = Word2Vec.load('../src/models/_word2vec_shortcut_search.model')
+        word2vec_model = Word2Vec.load('src/models/_word2vec_shortcut_search.model')
 
         user_input_terms = get_shortcut_search_terms(user_input_query)
         user_input_terms.append(user_input_program)

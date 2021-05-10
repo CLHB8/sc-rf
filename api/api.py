@@ -25,7 +25,7 @@ def text_search_query(user_input_query, user_input_program, user_input_device):
 
 def shortcut_search_query(user_input_query, user_input_program, user_input_device):
     index = nmslib.init(method='hnsw', space='cosinesimil')
-    index.loadIndex('../src/models/sparse_index_word2vec_shortcut_search.bin', load_data=True)
+    index.loadIndex('src/models/sparse_index_word2vec_shortcut_search.bin', load_data=True)
 
     ids = shortcut_query(user_input_query, user_input_program, user_input_device, index)
     return ids
@@ -33,10 +33,6 @@ def shortcut_search_query(user_input_query, user_input_program, user_input_devic
 
 @app.route('/api/getSearchResults', methods=['POST'])
 def get_search_results():
-    all_shortcuts = pd.read_csv('src/models/shortcuts.csv')
-    print(all_shortcuts.head(3))
-    all_shortcuts = pd.read_csv('/src/models/shortcuts.csv')
-    print(all_shortcuts.head(3))
     # get user inputs
     data_json = request.get_json(force=True)
 
@@ -58,7 +54,7 @@ def get_search_results():
         misspell_boolean = False
 
     # extract relevant rows from csv and order them according to ranking
-    all_shortcuts = pd.read_csv('../src/models/shortcuts.csv')
+    all_shortcuts = pd.read_csv('src/models/shortcuts.csv')
     results = all_shortcuts[all_shortcuts['id'].isin(ids)]
     results = results.set_index('id')
     results = results.loc[ids]
