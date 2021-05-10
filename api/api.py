@@ -34,13 +34,12 @@ def shortcut_search_query(user_input_query, user_input_program, user_input_devic
 @app.route('/api/getSearchResults', methods=['POST'])
 def get_search_results():
     # get user inputs
-    print(request)
-    print("______")
     print(request.data)
     print("______")
-    print(request.get_json())
+    data_json = request.get_json(force=True)
+    print(data_json)
     print("______")
-    print(format(request.json))
+    print("{} is {}".format(data_json, type(data_json)))
     user_input_text_search = request.json['textSearch']
     user_input_shortcut_query = request.json['inputShortcut']
     user_input_query = request.json['query']
