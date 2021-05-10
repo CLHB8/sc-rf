@@ -1,6 +1,7 @@
 from flask import Flask, request
 import nmslib
-from search_functions import text_query, get_device, spellcheck_query, shortcut_query
+# from search_functions import text_query, get_device, spellcheck_query, shortcut_query
+from search_functions import text_query, get_device, shortcut_query
 import pandas as pd
 
 # app = Flask(__name__)
@@ -11,13 +12,15 @@ app = Flask(__name__, static_folder="../build", static_url_path="/")
 def index():
     return app.send_static_file('index.html')
 
+
 def text_search_query(user_input_query, user_input_program, user_input_device):
     # perform query spellcheck
-    misspell_boolean, corrected_query = spellcheck_query(user_input_query)
+    # misspell_boolean, corrected_query = spellcheck_query(user_input_query)
 
     ids = text_query(user_input_query, user_input_program, user_input_device)
 
-    return ids, corrected_query, misspell_boolean
+    # return ids, corrected_query, misspell_boolean
+    return ids, '', False
 
 
 def shortcut_search_query(user_input_query, user_input_program, user_input_device):
