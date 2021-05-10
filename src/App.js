@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {HashRouter as Router, Switch, Route} from 'react-router-dom';
+import Results from './Results'
+import {ROUTES} from './utils/Routes'
+import LandingPage from './LandingPage'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+    const renderApp = () => (
+        <Switch>
+            <Route
+                key={ROUTES.LANDING}
+                exact
+                path={ROUTES.LANDING}
+                component={LandingPage}
+            />
+            <Route
+                key={ROUTES.RESULTS}
+                exact
+                path={ROUTES.RESULTS}
+                component={Results}
+            />
+        </Switch>
+    );
+
+    return (
+        <div>
+            <Router>
+                <Switch>{renderApp()}</Switch>
+            </Router>
+        </div>
+    );
 }
-
-export default App;
