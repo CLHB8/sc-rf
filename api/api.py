@@ -33,7 +33,10 @@ def shortcut_search_query(user_input_query, user_input_program, user_input_devic
 
 @app.route('/api/getSearchResults', methods=['POST'])
 def get_search_results():
-    all_shortcuts = pd.read_csv('../src/models/shortcuts.csv')
+    all_shortcuts = pd.read_csv('src/models/shortcuts.csv')
+    print(all_shortcuts.head(3))
+    all_shortcuts = pd.read_csv('/src/models/shortcuts.csv')
+    print(all_shortcuts.head(3))
     # get user inputs
     data_json = request.get_json(force=True)
 
