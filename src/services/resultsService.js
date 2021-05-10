@@ -4,7 +4,8 @@ export function get_Search_Results(textSearch, query, inputShortcut, selectedPro
             cache: "no-cache",
             headers: {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'dataType': 'json'
             },
             body: JSON.stringify({
                 textSearch: textSearch,
