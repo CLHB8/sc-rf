@@ -31,6 +31,7 @@ import Link from '@material-ui/core/Link'
 import Pagination from "@material-ui/lab/Pagination";
 import TextFieldsIcon from '@material-ui/icons/TextFields';
 import KeyboardIcon from '@material-ui/icons/Keyboard';
+import YoutubeSearchedForIcon from '@material-ui/icons/YoutubeSearchedFor';
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -55,6 +56,14 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(1),
         marginRight: theme.spacing(5),
         backgroundColor: theme.palette.secondary.main,
+        width: theme.spacing(6),
+        height: theme.spacing(6),
+    },
+    avatar_empty_search: {
+        margin: theme.spacing(1),
+        marginRight: theme.spacing(3),
+        marginLeft: theme.spacing(3),
+        backgroundColor: theme.palette.primary.main,
         width: theme.spacing(6),
         height: theme.spacing(6),
     },
@@ -101,6 +110,11 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(1),
         marginBottom: theme.spacing(2),
     },
+    empty_search: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+    }
 }));
 
 const NUMBER_OF_DISPLAYED_SHORTCUTS = 10;
@@ -285,17 +299,17 @@ function ResultsPage() {
                     <Loading/>
                 </Grid>
             ) : (
-                <Grid>
-                    <TableContainer component={Paper} className={classes.tableContainer}>
-                        <Table className={classes.table} aria-label="simple table">
-                            <TableHead>
-                                <TableRow>
-                                    <TableCell>Program</TableCell>
-                                    <TableCell>Shortcut</TableCell>
-                                    <TableCell>Description</TableCell>
-                                </TableRow>
-                            </TableHead>
-                            {searchResults !== [] || undefined ? (
+                <div>{searchResults.length > 0 ? (
+                    <Grid>
+                        <TableContainer component={Paper} className={classes.tableContainer}>
+                            <Table className={classes.table} aria-label="simple table">
+                                <TableHead>
+                                    <TableRow>
+                                        <TableCell>Program</TableCell>
+                                        <TableCell>Shortcut</TableCell>
+                                        <TableCell>Description</TableCell>
+                                    </TableRow>
+                                </TableHead>
                                 <TableBody>
                                     {searchResults.slice(
                                         NUMBER_OF_DISPLAYED_SHORTCUTS *
@@ -312,33 +326,34 @@ function ResultsPage() {
                                         </TableRow>
                                     ))}
                                 </TableBody>
-                            ) : (
-                                <TableBody>
-                                    <div>
-                                        <Typography component="p" variant="p">
-                                            Sorry, we couldn't find any results for your search query.
-                                        </Typography>
-                                    </div>
-                                </TableBody>
+                            </Table>
+                        </TableContainer>
+                        <Pagination
+                            page={currentPage}
+                            count={Math.ceil(
+                                searchResults.length /
+                                NUMBER_OF_DISPLAYED_SHORTCUTS
                             )}
-                        </Table>
-                    </TableContainer>
-                    <Pagination
-                        page={currentPage}
-                        count={Math.ceil(
-                            searchResults.length /
-                            NUMBER_OF_DISPLAYED_SHORTCUTS
-                        )}
-                        color="primary"
-                        shape="rounded"
-                        showFirstButton
-                        showLastButton
-                        onChange={(event, page) =>
-                            setCurrentPage(page)
-                        }
-                        className={classes.pagination}
-                    />
-                </Grid>
+                            color="primary"
+                            shape="rounded"
+                            showFirstButton
+                            showLastButton
+                            onChange={(event, page) =>
+                                setCurrentPage(page)
+                            }
+                            className={classes.pagination}
+                        />
+                    </Grid>
+                ) : (
+                    <div className={classes.empty_search}>
+                        <Avatar className={classes.avatar_empty_search} onClick={goToHomepage}>
+                            <YoutubeSearchedForIcon/>
+                        </Avatar>
+                        <Typography component="h2" variant="h6">
+                            Uh-oh, there are no results for this search.
+                        </Typography>
+                    </div>
+                )}</div>
             )}
         </Container>
     );
