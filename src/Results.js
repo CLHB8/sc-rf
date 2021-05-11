@@ -350,7 +350,7 @@ function ResultsPage() {
                             <YoutubeSearchedForIcon/>
                         </Avatar>
                         <Typography component="h2" variant="h6">
-                            Uh-oh, there are no results for this search.
+                            Uh-oh, there are no results for this search...
                         </Typography>
                     </div>
                 )}</div>
