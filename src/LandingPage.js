@@ -48,10 +48,12 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
     },
     programAvatars: {
-        width: theme.spacing(13),
-        height: theme.spacing(13),
+        width: theme.spacing(3),
+        height: theme.spacing(3),
     },
     programContainers: {
+        width: theme.spacing(4),
+        height: theme.spacing(4),
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -78,6 +80,17 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'row',
         alignItems: 'center',
     },
+    search_description: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginBottom: theme.spacing(3),
+        marginTop: theme.spacing(0.5),
+    },
+    search_desc_button: {
+        marginLeft: theme.spacing(3),
+        marginRight: theme.spacing(1),
+    }
 }));
 
 
@@ -182,6 +195,19 @@ export default function App() {
                         }}
                     />
                 </form>
+            </div>
+            <div className={classes.search_description}>
+                <Typography component="h2" variant="subtitle2">
+                    You can:
+                </Typography>
+                <Button variant="contained" color="primary" className={classes.search_desc_button}><TextFieldsIcon/></Button>
+                <Typography component="h2" variant="subtitle2">
+                    Search by text
+                </Typography>
+                <Button variant="contained" color="primary" className={classes.search_desc_button}><KeyboardIcon/></Button>
+                <Typography component="h2" variant="subtitle2">
+                    Search by keyboard shortcut
+                </Typography>
             </div>
             <div className={classes.subtitle}>
                 <Typography component="h2" variant="h6">
