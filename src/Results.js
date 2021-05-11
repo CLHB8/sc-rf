@@ -294,22 +294,32 @@ function ResultsPage() {
                                     <TableCell>Description</TableCell>
                                 </TableRow>
                             </TableHead>
-                            <TableBody>
-                                {searchResults.slice(
-                                    NUMBER_OF_DISPLAYED_SHORTCUTS *
-                                    (currentPage - 1),
-                                    NUMBER_OF_DISPLAYED_SHORTCUTS *
-                                    currentPage
-                                ).map((result) => (
-                                    <TableRow key={result.id}>
-                                        <TableCell component="th" scope="row">
-                                            {result.program}
-                                        </TableCell>
-                                        <TableCell>{result.shortcut}</TableCell>
-                                        <TableCell>{result.description}</TableCell>
-                                    </TableRow>
-                                ))}
-                            </TableBody>
+                            {searchResults !== [] ? (
+                                <TableBody>
+                                    {searchResults.slice(
+                                        NUMBER_OF_DISPLAYED_SHORTCUTS *
+                                        (currentPage - 1),
+                                        NUMBER_OF_DISPLAYED_SHORTCUTS *
+                                        currentPage
+                                    ).map((result) => (
+                                        <TableRow key={result.id}>
+                                            <TableCell component="th" scope="row">
+                                                {result.program}
+                                            </TableCell>
+                                            <TableCell>{result.shortcut}</TableCell>
+                                            <TableCell>{result.description}</TableCell>
+                                        </TableRow>
+                                    ))}
+                                </TableBody>
+                            ) : (
+                                <TableBody>
+                                    <div>
+                                        <Typography component="p" variant="p">
+                                            Sorry, we couldn't find any results for your search query.
+                                        </Typography>
+                                    </div>
+                                </TableBody>
+                            )}
                         </Table>
                     </TableContainer>
                     <Pagination
