@@ -138,6 +138,7 @@ function ResultsPage() {
             setCorrectedQuery(data.correctedQuery);
             setMisspell(data.misspell);
             setLoading(false);
+            console.log(searchResults);
         })
     }, []);
 
@@ -294,7 +295,7 @@ function ResultsPage() {
                                     <TableCell>Description</TableCell>
                                 </TableRow>
                             </TableHead>
-                            {searchResults !== [] ? (
+                            {searchResults !== [] || undefined ? (
                                 <TableBody>
                                     {searchResults.slice(
                                         NUMBER_OF_DISPLAYED_SHORTCUTS *
