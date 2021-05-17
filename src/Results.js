@@ -193,10 +193,11 @@ function ResultsPage() {
 
     const handleKeyDown = (evt) => {
         // todo: add a pulldown menu with buttons like alt, f3, f11
-        if (evt.key === 'Control') {
-            evt.key = 'Ctrl'
-        }
         if (evt.key !== 'Enter') {
+            evt.preventDefault();
+            if (evt.key === 'Control') {
+                evt.key = 'Ctrl'
+            }
             if (evt.key !== 'Backspace') {
                 if (inputShortcut === '') {
                     setInputShortcut(evt.key)

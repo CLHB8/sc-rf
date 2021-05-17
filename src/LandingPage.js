@@ -35,6 +35,7 @@ const useStyles = makeStyles((theme) => ({
         flexWrap: 'wrap',
         width: '100%',
         alignItems: 'center',
+        justifyContent: 'center',
         '& > *': {
             margin: theme.spacing(1),
             width: theme.spacing(16),
@@ -48,12 +49,12 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
     },
     programAvatars: {
-        width: theme.spacing(3),
-        height: theme.spacing(3),
-    },
-    programContainers: {
         width: theme.spacing(4),
         height: theme.spacing(4),
+    },
+    programContainers: {
+        width: theme.spacing(5),
+        height: theme.spacing(5),
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -123,10 +124,11 @@ export default function App() {
 
     const handleKeyDown = (evt) => {
         // todo: add a pulldown menu with buttons like alt, f3, f11
-        if (evt.key === 'Control') {
-            evt.key = 'Ctrl'
-        }
         if (evt.key !== 'Enter') {
+            evt.preventDefault();
+            if (evt.key === 'Control') {
+                evt.key = 'Ctrl'
+            }
             if (evt.key !== 'Backspace') {
                 if (inputShortcut === '') {
                     setInputShortcut(evt.key)
