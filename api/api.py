@@ -66,7 +66,7 @@ def get_search_results():
     else:
         filtered_results = results.loc[(results['device_gram'] == user_input_device) &
                                        (results['program_gram'] == user_input_program)].to_dict(orient='records')
-
+    print(user_input_device, user_input_program, user_input_query)
     return {'results': filtered_results,
             'correctedQuery': corrected_query,
             'misspell': misspell_boolean}
