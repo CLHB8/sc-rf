@@ -5,7 +5,7 @@ from gensim.models.phrases import Phraser
 import numpy as np
 from gensim.models import Word2Vec
 from typing import List
-# from spellchecker import SpellChecker
+from spellchecker import SpellChecker
 import nmslib
 
 ps = PorterStemmer()
@@ -142,19 +142,19 @@ def get_device(tab_value):
     return switcher.get(tab_value, 0)
 
 
-# def spellcheck_query(query):
-#     spell = SpellChecker()
-#     wordlist = query.split()
-#     misspelled = list(spell.unknown(wordlist))
-#     corrected_wordlist = []
-#     for word in wordlist:
-#         if word in misspelled:
-#             corrected_wordlist.append(spell.correction(word))
-#         else:
-#             corrected_wordlist.append(word)
-#     corrected_query = ' '.join(corrected_wordlist)
-#     if not misspelled:
-#         misspell_boolean = False
-#     else:
-#         misspell_boolean = True
-#     return misspell_boolean, corrected_query
+def spellcheck_query(query):
+    spell = SpellChecker()
+    wordlist = query.split()
+    misspelled = list(spell.unknown(wordlist))
+    corrected_wordlist = []
+    for word in wordlist:
+        if word in misspelled:
+            corrected_wordlist.append(spell.correction(word))
+        else:
+            corrected_wordlist.append(word)
+    corrected_query = ' '.join(corrected_wordlist)
+    if not misspelled:
+        misspell_boolean = False
+    else:
+        misspell_boolean = True
+    return misspell_boolean, corrected_query
