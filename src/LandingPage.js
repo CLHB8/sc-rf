@@ -224,67 +224,67 @@ export default function App() {
             </div>
             <div className={classes.programs}>
                 <Paper elevation={3} className={classes.programContainers}><Avatar alt="Your Program here"
-                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/dynamics.png"
+                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/ms-excel.png"
                                                                                    className={classes.programAvatars}/></Paper>
                 <Paper elevation={3} className={classes.programContainers}><Avatar alt="Your Program here"
-                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/musicbee.png"
+                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/ms-powerpoint.png"
                                                                                    className={classes.programAvatars}/></Paper>
                 <Paper elevation={3} className={classes.programContainers}><Avatar alt="Your Program here"
-                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/kingsoft.png"
+                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/ms-word.png"
                                                                                    className={classes.programAvatars}/></Paper>
                 <Paper elevation={3} className={classes.programContainers}><Avatar alt="Your Program here"
-                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/sketch.png"
+                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/windows.png"
                                                                                    className={classes.programAvatars}/></Paper>
                 <Paper elevation={3} className={classes.programContainers}><Avatar alt="Your Program here"
-                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/openscad.png"
+                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/vscode.png"
+                                                                                   className={classes.programAvatars}/></Paper>
+                <Paper elevation={3} className={classes.programContainers}><Avatar alt="Your Program here"
+                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/gmail.png"
+                                                                                   className={classes.programAvatars}/></Paper>
+                <Paper elevation={3} className={classes.programContainers}><Avatar alt="Your Program here"
+                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/openoffice.png"
+                                                                                   className={classes.programAvatars}/></Paper>
+                <Paper elevation={3} className={classes.programContainers}><Avatar alt="Your Program here"
+                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/adobe-acrobat.png"
+                                                                                   className={classes.programAvatars}/></Paper>
+                <Paper elevation={3} className={classes.programContainers}><Avatar alt="Your Program here"
+                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/adobe-photoshop.png"
+                                                                                   className={classes.programAvatars}/></Paper>
+                <Paper elevation={3} className={classes.programContainers}><Avatar alt="Your Program here"
+                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/adobe-indesign.png"
+                                                                                   className={classes.programAvatars}/></Paper>
+                <Paper elevation={3} className={classes.programContainers}><Avatar alt="Your Program here"
+                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/google-photos.png"
+                                                                                   className={classes.programAvatars}/></Paper>
+                <Paper elevation={3} className={classes.programContainers}><Avatar alt="Your Program here"
+                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/ms-visio.png"
+                                                                                   className={classes.programAvatars}/></Paper>
+                <Paper elevation={3} className={classes.programContainers}><Avatar alt="Your Program here"
+                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/ms-outlook.png"
+                                                                                   className={classes.programAvatars}/></Paper>
+                <Paper elevation={3} className={classes.programContainers}><Avatar alt="Your Program here"
+                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/zoom.png"
+                                                                                   className={classes.programAvatars}/></Paper>
+                <Paper elevation={3} className={classes.programContainers}><Avatar alt="Your Program here"
+                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/chrome.png"
+                                                                                   className={classes.programAvatars}/></Paper>
+                <Paper elevation={3} className={classes.programContainers}><Avatar alt="Your Program here"
+                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/vlc.png"
+                                                                                   className={classes.programAvatars}/></Paper>
+                <Paper elevation={3} className={classes.programContainers}><Avatar alt="Your Program here"
+                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/atom.png"
+                                                                                   className={classes.programAvatars}/></Paper>
+                <Paper elevation={3} className={classes.programContainers}><Avatar alt="Your Program here"
+                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/overwatch.png"
+                                                                                   className={classes.programAvatars}/></Paper>
+                <Paper elevation={3} className={classes.programContainers}><Avatar alt="Your Program here"
+                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/apple-keynote.png"
                                                                                    className={classes.programAvatars}/></Paper>
                 <Paper elevation={3} className={classes.programContainers}><Avatar alt="Your Program here"
                                                                                    src="https://shortcutworld.com/imgsrv/appicons-lg/apple-numbers.png"
                                                                                    className={classes.programAvatars}/></Paper>
                 <Paper elevation={3} className={classes.programContainers}><Avatar alt="Your Program here"
-                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/1password.png"
-                                                                                   className={classes.programAvatars}/></Paper>
-                <Paper elevation={3} className={classes.programContainers}><Avatar alt="Your Program here"
-                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/vim.png"
-                                                                                   className={classes.programAvatars}/></Paper>
-                <Paper elevation={3} className={classes.programContainers}><Avatar alt="Your Program here"
-                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/quicktime.png"
-                                                                                   className={classes.programAvatars}/></Paper>
-                <Paper elevation={3} className={classes.programContainers}><Avatar alt="Your Program here"
-                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/textmate.png"
-                                                                                   className={classes.programAvatars}/></Paper>
-                <Paper elevation={3} className={classes.programContainers}><Avatar alt="Your Program here"
-                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/coda.png"
-                                                                                   className={classes.programAvatars}/></Paper>
-                <Paper elevation={3} className={classes.programContainers}><Avatar alt="Your Program here"
-                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/safari.png"
-                                                                                   className={classes.programAvatars}/></Paper>
-                <Paper elevation={3} className={classes.programContainers}><Avatar alt="Your Program here"
-                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/pixelmator.png"
-                                                                                   className={classes.programAvatars}/></Paper>
-                <Paper elevation={3} className={classes.programContainers}><Avatar alt="Your Program here"
-                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/logic-pro.png"
-                                                                                   className={classes.programAvatars}/></Paper>
-                <Paper elevation={3} className={classes.programContainers}><Avatar alt="Your Program here"
-                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/omnifocus.png"
-                                                                                   className={classes.programAvatars}/></Paper>
-                <Paper elevation={3} className={classes.programContainers}><Avatar alt="Your Program here"
-                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/appcode.png"
-                                                                                   className={classes.programAvatars}/></Paper>
-                <Paper elevation={3} className={classes.programContainers}><Avatar alt="Your Program here"
-                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/ibooks.png"
-                                                                                   className={classes.programAvatars}/></Paper>
-                <Paper elevation={3} className={classes.programContainers}><Avatar alt="Your Program here"
-                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/apple.png"
-                                                                                   className={classes.programAvatars}/></Paper>
-                <Paper elevation={3} className={classes.programContainers}><Avatar alt="Your Program here"
-                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/garageband.png"
-                                                                                   className={classes.programAvatars}/></Paper>
-                <Paper elevation={3} className={classes.programContainers}><Avatar alt="Your Program here"
-                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/apple-pages.png"
-                                                                                   className={classes.programAvatars}/></Paper>
-                <Paper elevation={3} className={classes.programContainers}><Avatar alt="Your Program here"
-                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/apple-xcode.png"
+                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/dynamics.png"
                                                                                    className={classes.programAvatars}/></Paper>
             </div>
             <div className={classes.subtitle}>
