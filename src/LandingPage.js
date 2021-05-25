@@ -123,10 +123,17 @@ export default function App() {
     }
 
     const handleKeyDown = (evt) => {
-        // todo: add a pulldown menu with buttons like alt, f3, f11
         if (evt.key !== 'Enter') {
             if (evt.key === 'Control') {
                 evt.key = 'Ctrl'
+            }
+            if (evt.key === 'Meta' && isWindows) {
+                evt.key = 'Win'
+            } else if (evt.key === 'Meta' && isMacOs) {
+                evt.key = 'Command'
+            }
+            if (evt.key === 'Alt' && isMacOs) {
+                evt.key = 'Option'
             }
             if (evt.key !== 'Backspace') {
                 if (inputShortcut === '') {
