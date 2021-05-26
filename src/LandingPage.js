@@ -283,9 +283,6 @@ export default function App() {
                 <Paper elevation={3} className={classes.programContainers}><Avatar alt="Your Program here"
                                                                                    src="https://shortcutworld.com/imgsrv/appicons-lg/apple-numbers.png"
                                                                                    className={classes.programAvatars}/></Paper>
-                <Paper elevation={3} className={classes.programContainers}><Avatar alt="Your Program here"
-                                                                                   src="https://shortcutworld.com/imgsrv/appicons-lg/dynamics.png"
-                                                                                   className={classes.programAvatars}/></Paper>
             </div>
             <div className={classes.subtitle}>
                 <Typography component="h2" variant="h6">
